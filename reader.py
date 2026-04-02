@@ -22,7 +22,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Aurora eBPF Ingestor")
     parser.add_argument(
         "--brokers", 
-        default=os.getenv("KAFKA_BROKERS", "localhost:29092"),
+        default=os.getenv("KAFKA_BROKERS", "kafka:9092"),
         help="Kafka broker list"
     )
     parser.add_argument("--socket", default="unix:///var/run/tetragon/tetragon.sock")

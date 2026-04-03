@@ -19,11 +19,11 @@ COPY shared/ /app/shared/
 RUN cd /app/shared && pip install .
 
 # Copy ebpf source
-COPY ebpf/ /app/ebpf/
+COPY eBPF/ /app/eBPF/
 
 # Set PYTHONPATH to include the root for consistent imports
 ENV PYTHONPATH=/app
 
 # Command to run the reader
 # Note: Use -u for unbuffered output to see logs in docker logs
-CMD ["python", "-u", "ebpf/reader.py"]
+CMD ["python", "-u", "eBPF/reader.py"]
